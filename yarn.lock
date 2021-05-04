@@ -11878,3 +11878,8 @@
   "integrity" "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="
   "resolved" "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   "version" "0.1.0"
+
+"youtube-url@^0.5.0":
+  "integrity" "sha1-k1EH76/v0g6l78AU2PnI84Xg7Ro="
+  "resolved" "https://registry.npmjs.org/youtube-url/-/youtube-url-0.5.0.tgz"
+  "version" "0.5.0"

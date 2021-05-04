@@ -3,6 +3,8 @@ import {useState,useEffect} from 'react'
 import '@fortawesome/free-solid-svg-icons'
 import YoutubeVideo from './YoutubeVideo';
 import axios from 'axios'
+var youtubeUrl = require('youtube-url');
+
 
 
 const LoadVideos = ()=>{
@@ -62,17 +64,34 @@ newVideo[e.target.name] = e.target.value;
 setOneVideo(newVideo);
 }
 
+// if( youtubeUrl.valid(oneVideo.url)){
+//     const newVids = [...videos]
+//         newVids.push(oneVideo);
+//         setVideos(newVids);
+//         console.log(oneVideo)   
+//    }
+//    else{
+//        alert('Invalid URL')
+//    }
+
 function addVideo(e){
      e.preventDefault();
+     if( youtubeUrl.valid(oneVideo.vurl)){
     const newVids = [...videos]
     newVids.push(oneVideo);
     setVideos(newVids);
+  
 axios.post('https://video-rec.herokuapp.com/',{
     title:oneVideo.title,
     vurl:oneVideo.vurl
 })
 .then(res=>{console.log(res.data)})
 console.log(oneVideo)
+}
+else{
+   alert('Invalid Youtube URL')
+}  
+    
 }
 
 function handleSearch(e){
