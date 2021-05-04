@@ -1,5 +1,4 @@
 import {useState,useEffect} from 'react'
-// import data from './exampleresponse.json'
 import '@fortawesome/free-solid-svg-icons'
 import YoutubeVideo from './YoutubeVideo';
 import axios from 'axios'
@@ -64,15 +63,6 @@ newVideo[e.target.name] = e.target.value;
 setOneVideo(newVideo);
 }
 
-// if( youtubeUrl.valid(oneVideo.url)){
-//     const newVids = [...videos]
-//         newVids.push(oneVideo);
-//         setVideos(newVids);
-//         console.log(oneVideo)   
-//    }
-//    else{
-//        alert('Invalid URL')
-//    }
 
 function addVideo(e){
      e.preventDefault();
@@ -113,12 +103,14 @@ return(
 {show?
 <form id='form' onSubmit={e=>addVideo(e)}>
 <div>
-<label>Title</label>
+<label>Title
     <input onChange={e=>handleChange(e)} className='input' name='title' type='text' required/>   
+    </label>
 </div>
 <div>
-<label>URL</label>
+<label>URL
     <input onChange={e=>handleChange(e)} className='input' name='vurl' type='text' required/>
+    </label>
 </div>
 <div>
 <button className="btn btn-warning input" type='cancel' onClick = {()=>{setShow(false)}}>Cancel</button>
@@ -130,10 +122,10 @@ return(
 </div>
 
 
-<div style={{width:'40%', 'margin-top':'2rem'} }>
-<label>Search</label>
+<div style={{width:'40%', 'margin':'2rem'} }>
+<label>Search
     <input onChange={e=>{handleSearch(e)}} value={search} className='search' name='search' type='text'/> 
-
+    </label>
 </div>
 
 </div>
@@ -145,11 +137,9 @@ return(
     return <div key={index} className='vidContainer'>
         <h5 id='vidTitle'>{video.title}</h5>
        
-       <div id='votes'> <i className="fas fa-thumbs-up vote" onClick={e=>{incVotes(e,index,video.id)}}></i> <h5>{video.rating} votes</h5><i className="fas fa-thumbs-down vote" onClick={e=>{decVotes(e,index,video.id)}}></i></div>
+       <div id='votes'> <i className="fas fa-thumbs-up vote" onClick={e=>{incVotes(e,index,video.id)}}></i> <h4>{video.rating} votes</h4><i className="fas fa-thumbs-down vote" onClick={e=>{decVotes(e,index,video.id)}}></i></div>
 <YoutubeVideo video={video}/>
 
-       {/* <iframe className='vid' allowFullScreen src= {`${video.url}`.replace('watch?v=','embed/')} title="YouTube video player" >
-</iframe> */}
             <div>
             <button className="btn btn-danger" onClick={(e)=>{deleteVideo(e,video.id)}}>Delete</button>   
             </div>         

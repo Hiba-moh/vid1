@@ -60,15 +60,12 @@ code {
   display: flex;
   align-items: center;
 justify-content: center;
-  /* height: 4rem; */
   margin-top: 0;
   box-sizing: border-box;
   
 }
 #form{
-  /* width: 30%; */
   margin-top: 1rem;
-  /* display: none; */
 }
 .input{
 margin-bottom: 1rem;
